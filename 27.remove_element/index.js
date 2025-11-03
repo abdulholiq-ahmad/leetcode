@@ -1,5 +1,5 @@
 var removeElement = function(nums, val) {
-  if(nums.length === 0) retur
+  if(nums.length === 0) return
 
   let sortedArray = nums.sort((a, b) => a - b)
   let i = 0
