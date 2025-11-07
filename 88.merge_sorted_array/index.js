@@ -1,16 +1,25 @@
 var merge = function(nums1, m, nums2, n) {
-    let i = nums1.length - 1
-    let j = nums2.length - 1
-    let k = nums1.length + nums2.length - 1
+    let i = m - 1
+    let j = n - 1
+    let k = m + n - 1
 
     console.log(i,j,k)
 
     while(i >= 0 && j >= 0) {
-
+      if(nums1[i] > nums2[j]) {
+        nums1[k] = nums1[i]
+        i--
+      } else {
+        nums1[k] = nums2[j]
+        j--
+      }
+      k--
     }
 
     while (j >= 0) {
-    // Faqat nums2 da element qolgan
+      nums1[k] = nums2[j]
+      j--
+      k--
     }
 };
 
