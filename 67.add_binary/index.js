@@ -1,0 +1,27 @@
+var addBinary = function(a, b) {
+  let result = ""
+  let carry = 0
+  let i = a.length - 1
+  let j = b.length - 1
+
+  while(i >= 0 || j >= 0 || carry > 0) {
+    let sum = carry
+    
+    if(i >= 0) {
+  sum += parseInt(a[i])
+  i--
+}
+
+if(j >= 0) {  // else EMAS!
+  sum += parseInt(b[j])
+  j--
+}
+
+    let digit = sum % 2
+    carry = Math.floor(sum / 2)
+
+    result = digit + result
+  }
+
+  return result
+};
